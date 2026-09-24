@@ -1,0 +1,16 @@
+# Portability check on GitHub Actions (optional).
+# Copy to .github/workflows/portability.yml
+# Free on public repositories; on private ones it uses the free monthly quota (the check takes seconds).
+name: Portability
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check portability
+        run: bash scripts/check-portability.sh --all

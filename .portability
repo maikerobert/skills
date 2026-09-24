@@ -1,0 +1,3 @@
+# This repository documents its own rules, so the skill texts mention AI tool names on purpose.
+ignore: **/*.md
+ignore: **/assets/**

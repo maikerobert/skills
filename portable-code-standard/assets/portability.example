@@ -1,0 +1,12 @@
+# Portability check configuration.
+# Copy to the repository root as .portability
+#
+# name:    block one more name in code, comments and commit messages
+# phrase:  block one more regular expression (case-insensitive)
+# ignore:  ignore a path (Git pathspec glob)
+
+# Example: an embedded platform service or SDK this project does not use
+# name: replit
+
+# A module that integrates an AI API on purpose (the provider name may appear only here)
+# ignore: src/integrations/llm/**
