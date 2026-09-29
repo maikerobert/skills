@@ -8,7 +8,7 @@ The standards I use every day to work with AI agents across my companies. Each f
 |---|---|
 | [Portable Code Standard](portable-code-standard/) | AI agents write code without putting their own name in classes, comments and commits, without tying the system to the auth, database or deploy of the platform that generated it, without secrets in the repository, and always in English. Ships a free automated check that runs before every commit. |
 | [Web Launch Standard](web-launch-standard/) | The checklist I run before any page goes live: scope, technical SEO, images, social sharing, Google Analytics 4, accessibility, performance, forms, safe deploy and QA on the public URL. It first classifies the page as public or private, so a dashboard never gets an Open Graph image or a Search Console entry. Ships a free check for live pages. |
-| [Humanizer PT-BR](humanizer-pt-br/) | Removes the signs of AI writing from Brazilian Portuguese text: 26 patterns, with absolute bans on em dashes, "não é X, é Y" and chopped sentences. Instructions in English, so anyone building for Brazil can use it. |
+| [Humanizer PT-BR](humanizer-pt-br/) | Removes the signs of AI writing from Brazilian Portuguese text: 46 patterns, absolute bans on em dashes, "não é X, é Y" and chopped sentences, and a two-pass process that ends with the author's own hand. Instructions in English, so anyone building for Brazil can use it. |
 
 ## Where they came from
 
@@ -51,7 +51,7 @@ It checks the live page for status, HTTPS, metadata, canonical, headings, images
 
 ## Credits
 
-Humanizer PT-BR builds on the open source skill [humanizer](https://github.com/blader/humanizer) by Siqi Chen (MIT License), which draws on the "Signs of AI writing" guide from Wikipedia's WikiProject AI Cleanup. I rewrote the patterns for the tics of Brazilian Portuguese, with original examples, and added the chopped sentence pattern, the absolute rules, the voice profile and the delivery modes. The original license notice is in [humanizer-pt-br/NOTICE.md](humanizer-pt-br/NOTICE.md).
+Humanizer PT-BR builds on two open source skills under the MIT License: [humanizer](https://github.com/blader/humanizer) by Siqi Chen, which draws on the "Signs of AI writing" guide from Wikipedia's WikiProject AI Cleanup, and [avoid-ai-writing](https://github.com/conorbronsdon/avoid-ai-writing) by Conor Bronsdon. I rewrote the patterns for the tics of Brazilian Portuguese, with original examples, and added the chopped sentence pattern, the absolute rules, the two-pass process I measured on my own articles, the editing marks, the voice profile and the delivery modes. The original license notices are in [humanizer-pt-br/NOTICE.md](humanizer-pt-br/NOTICE.md).
 
 ## License and contributions
 
@@ -69,7 +69,7 @@ Os padrões que uso no dia a dia para trabalhar com agentes de inteligência art
 
 - **Portable Code Standard:** a IA escreve código sem colocar o nome dela em classes, comentários e commits, sem amarrar o sistema à autenticação, ao banco ou ao deploy da plataforma que o gerou, sem segredos no repositório e sempre em inglês. Traz uma verificação automática e gratuita que roda antes de cada commit.
 - **Web Launch Standard:** o checklist que eu rodo antes de colocar qualquer página no ar, com escopo, SEO técnico, imagens, compartilhamento, Google Analytics 4, acessibilidade, performance, formulários, deploy seguro e QA na URL pública. Ele começa perguntando se a página é pública ou privada, porque um dashboard não precisa de imagem de compartilhamento nem de Search Console.
-- **Humanizer PT-BR:** tira a cara de IA de textos em português, com 26 padrões e vetos absolutos a travessão, a "não é X, é Y" e à frase picotada. Parte da skill open source humanizer, de Siqi Chen, com crédito e aviso de licença preservados.
+- **Humanizer PT-BR:** tira a cara de IA de textos em português, com 46 padrões, vetos absolutos a travessão, a "não é X, é Y" e à frase picotada, e um processo em duas passadas que termina na mão de quem assina. Parte das skills open source humanizer, de Siqi Chen, e avoid-ai-writing, de Conor Bronsdon, com crédito e avisos de licença preservados.
 
 Cada uma nasceu de um problema real que encontrei construindo produto e conteúdo com agentes, e virou um padrão escrito, com verificação automática onde a máquina consegue checar.
 
