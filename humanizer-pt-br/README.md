@@ -1,6 +1,6 @@
 # Humanizer PT-BR
 
-Removes the signs of AI writing from Brazilian Portuguese text and gives it a human voice. 46 patterns, absolute bans on em dashes, "não é X, é Y" and chopped sentences, and a two-pass process that ends with the author's own hand.
+Removes the signs of AI writing from Brazilian Portuguese text and gives it a human voice. 46 patterns, absolute bans on em dashes, "não é X, é Y" and chopped sentences, and a three-pass process (produce, edit the way the author edits, swap words) that ends with the author's own hand.
 
 [![Download humanizer-pt-br.zip](https://img.shields.io/badge/download-humanizer--pt--br.zip-1f6feb?style=for-the-badge)](https://github.com/maikerobert/skills/releases/latest/download/humanizer-pt-br.zip)
 
@@ -16,11 +16,13 @@ The instructions are in English, so anyone building for Brazil can use it. The t
 
 > O novo painel mostra as vendas do dia em tempo real.
 
-## Why two passes
+## Why these passes
 
 A detector measures, word by word, how predictable the next word is. An AI imitating a person still picks the most likely word, so rules alone do not fix it. On a real article measured in September 2026, the text written by AI with every rule scored 61% AI. Two AI editing passes brought it down by 4 points and then 1. The author's own edits, sometimes just one or two words per sentence, brought it down by 28 points and then 12, to 16%.
 
-So the skill writes (pass 1), edits the way the author edits, trading the most likely words for less likely ones (pass 2), and hands back a list of the blocks the author should still touch by hand (pass 3).
+On a second article, in October 2026, the AI text scored 98% AI; restructuring brought it to 95%, a pass that only swapped 41 words brought it to 88%, and the author's own hand brought it to 2%.
+
+So the skill writes (pass 1), edits the way the author edits (pass 2), swaps likely words for less likely ones without touching the sentence and hands the list of swaps to the author to veto (pass 2b), and ends with the list of blocks the author should still touch by hand (pass 3).
 
 ## What it catches
 
@@ -39,10 +41,10 @@ It never invents facts, numbers, stories or quotes to make a text sound more hum
 
 ## Em português
 
-Tira a cara de IA de textos em português, com 46 padrões e vetos absolutos a travessão, a "não é X, é Y" e à frase picotada. Trabalha em duas passadas, escrever e depois editar do jeito que o autor edita, e termina com a lista dos trechos que o autor ainda precisa mexer com a própria mão, porque na medição foi essa a etapa que mais tirou a cara de IA. Baixe o `.zip` pelo botão acima e envie na área de Skills do Claude ou do ChatGPT. Com um perfil de voz opcional, reescreve do jeito de quem assina.
+Tira a cara de IA de textos em português, com 46 padrões e vetos absolutos a travessão, a "não é X, é Y" e à frase picotada. Trabalha em três passadas, escrever, editar do jeito que o autor edita e depois só trocar palavras prováveis por menos prováveis sem mexer na frase, e termina com a lista dos trechos que o autor ainda precisa mexer com a própria mão, porque na medição foi essa a etapa que mais tirou a cara de IA (de 88% para 2% em um artigo de outubro de 2026). Baixe o `.zip` pelo botão acima e envie na área de Skills do Claude ou do ChatGPT. Com um perfil de voz opcional, reescreve do jeito de quem assina.
 
 ## Credits and license
 
-Built by [Maike Robert](https://github.com/maikerobert) on two open source skills: [humanizer](https://github.com/blader/humanizer) by Siqi Chen (MIT), which draws on Wikipedia's "Signs of AI writing" guide, and [avoid-ai-writing](https://github.com/conorbronsdon/avoid-ai-writing) by Conor Bronsdon (MIT). The patterns were rewritten for Brazilian Portuguese with original examples, plus pattern 26, the absolute rules, the two-pass process, the editing marks, the voice profile and the delivery modes. Original license notices in [NOTICE.md](NOTICE.md). MIT License.
+Built by [Maike Robert](https://github.com/maikerobert) on two open source skills: [humanizer](https://github.com/blader/humanizer) by Siqi Chen (MIT), which draws on Wikipedia's "Signs of AI writing" guide, and [avoid-ai-writing](https://github.com/conorbronsdon/avoid-ai-writing) by Conor Bronsdon (MIT). The patterns were rewritten for Brazilian Portuguese with original examples, plus pattern 26, the absolute rules, the three-pass process, the editing marks, the voice profile and the delivery modes. Original license notices in [NOTICE.md](NOTICE.md). MIT License.
 
 Part of the [Maike Robert skills collection](https://github.com/maikerobert/skills).

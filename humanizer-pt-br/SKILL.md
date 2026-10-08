@@ -1,21 +1,23 @@
 ---
 name: humanizer-pt-br
-description: Reviews and rewrites Brazilian Portuguese text to remove the signs of AI writing and give it a human voice, in two passes (produce, then edit the way the author edits, trading the most likely words for less likely ones) plus a final pass by the author. Use before publishing or sending any text in Portuguese (articles, posts, emails, proposals, interface copy) or when the user asks to humanize, review, audit or "tirar a cara de IA".
+description: Reviews and rewrites Brazilian Portuguese text to remove the signs of AI writing and give it a human voice, in three AI passes (produce, edit the way the author edits, then only swap likely words for less likely ones without touching the sentence) plus a final pass by the author. Use before publishing or sending any text in Portuguese (articles, posts, emails, proposals, interface copy) or when the user asks to humanize, review, audit or "tirar a cara de IA".
 ---
 
 # Humanizer PT-BR
 
-By Maike Robert, built on two open source skills: "humanizer" by Siqi Chen (github.com/blader/humanizer, MIT License), which draws on the "Signs of AI writing" guide from Wikipedia's WikiProject AI Cleanup, and "avoid-ai-writing" by Conor Bronsdon (github.com/conorbronsdon/avoid-ai-writing, MIT License), which expands the catalog. The patterns were rewritten for the equivalent tics of Brazilian Portuguese, with original examples. This version adds the chopped sentence pattern (26), the absolute rules, the two-pass process measured on a real article, the author's editing marks, the voice profile and the delivery modes. Patterns that only exist in chat, in English or in code documentation were left out. The original license notices are in `NOTICE.md`.
+By Maike Robert, built on two open source skills: "humanizer" by Siqi Chen (github.com/blader/humanizer, MIT License), which draws on the "Signs of AI writing" guide from Wikipedia's WikiProject AI Cleanup, and "avoid-ai-writing" by Conor Bronsdon (github.com/conorbronsdon/avoid-ai-writing, MIT License), which expands the catalog. The patterns were rewritten for the equivalent tics of Brazilian Portuguese, with original examples. This version adds the chopped sentence pattern (26), the absolute rules, the three-pass process measured on real articles, the word-swap pass, the author's editing marks, the voice profile and the delivery modes. Patterns that only exist in chat, in English or in code documentation were left out. The original license notices are in `NOTICE.md`.
 
 The instructions are in English so anyone can use the skill; the text it reviews and produces is always Brazilian Portuguese. Examples are kept in Portuguese on purpose.
 
 ## What this skill is
 
-A writing quality tool for human readers. Its two-pass process also lowers what statistical detectors (Pangram, GPTZero, the Substack meter) read as machine text, but the goal is the reader.
+A writing quality tool for human readers. Its passes also lower what statistical detectors (Pangram, GPTZero, the Substack meter) read as machine text, but the goal is the reader.
 
 The process comes from a measurement on a real article by the author, in September 2026. Text produced by AI following every rule scored 61% AI. After the author edited half of it by hand, 33%. After the AI applied the author's editing marks to the other half, 29%, and after a heavier second AI pass on the same blocks, 28%. After the author swapped one or two words per sentence in those blocks, 16%.
 
-The rule that follows: text produced in one go, even with good rules, is still statistically machine text. The AI pass imitating the author gains little (4 points, then 1). The author's pass, even a small one, gains a lot (28 points, then 12). So the skill works in two passes and always ends with the author's hand.
+The rule that follows: text produced in one go, even with good rules, is still statistically machine text. The AI pass imitating the author gains little (4 points, then 1). The author's pass, even a small one, gains a lot (28 points, then 12).
+
+A second measurement, on another article by the author in October 2026 (Substack meter, powered by Pangram): the text produced by AI scored 98% AI. Pass 2 (restructuring the way the author edits: commas, connectors, order) brought it to 95%. A pass that only swapped words, 41 swaps, one per sentence in about half the sentences and nothing else touched, brought it to 88%, and the label changed from "nearly all AI" to "partially AI-assisted". The author's own pass then brought it to 2% AI. Two rules follow: swapping words gains more than restructuring (7 points against 3) with less risk, so it became a pass of its own; and nothing the AI does replaces the author's hand, which gained 86 points. So the skill works in three AI passes and always ends with the author's hand.
 
 ## Why the AI pass gains little, and what to do about it
 
@@ -28,11 +30,13 @@ Rules for pass 2:
 - **Do not smooth.** A crooked sentence, spoken redundancy, "Mas..", an emoticon or a spaced hyphen (" - ", which is not an em dash) that the author wrote stay. Never "fix" them in an audit, and never add them in a larger dose than the author uses.
 - **Measure, do not assume.** When a detector is available, measure before and after each pass and write the numbers down. An AI pass that does not move the number should not be repeated; the rest belongs to the author.
 
-## Two-pass process (required for text to be published)
+## The passes (required for text to be published)
 
 **Pass 1, produce.** Write with the rules of this skill and the voice profile. Do not try to "sound human" here; try to be right, clear and in the agreed structure.
 
 **Pass 2, edit the way the author edits.** Reread as an editor, not as the writer, and apply the author's editing marks unevenly: in about 30% to 40% of sentences, never in all of them, and never the same mark in consecutive sentences. Uniform application becomes a new fingerprint. Prefer the cleanest sentences and the paragraphs that end with a perfect landing. Do not rewrite whole paragraphs; change punctuation, connectors, order, a word here and there. Flag the paragraphs that are still 100% AI (definitions, sourced data, the closing), because those are the ones the author needs to touch.
+
+**Pass 2b, swap words.** Only after pass 2, and separate from it. Go through the text sentence by sentence and, in about half of the sentences (never all of them, or it becomes a pattern), trade one or two words for the second or third natural option in Portuguese, from the author's vocabulary when there is a voice profile. Nothing else changes: punctuation, word order, sentence length, paragraphs, all stay the same. What can be swapped: connectors ("porque" → "afinal de contas", "então" → "com isso"), generic verbs ("fazer", "ter", "usar", "ficar", "ver", "mudar" → the more specific verb the author would use: "rola", "empaca", "evapora", "atravessa"), intensifiers ("muito", "bem", "mais", "alguns" → "uns"), evaluative adjectives ("bom" → "esperto", "valioso" → "caro", "genérico" → "de prateleira"), time expressions ("há tempo" → "faz tempo", "nas próximas semanas" → "daqui a algumas semanas"), set phrases ("em nenhum momento" → "em hora nenhuma", "não está resolvido" → "não está redondo"). Keep gender, number and conjugation, and check that the new word does not repeat another one in the same sentence or paragraph. Never touch: names, numbers, product or method terms, technical terms the text explains, quotes, links, titles and subtitles, and the marks that are already the author's. Deliver the swaps as a numbered list (old word → new word, with the sentence around it) so the author can veto in two minutes what is not theirs; apply only the approved ones. Measure before and after when a detector is available and record the numbers. If it gains fewer than 5 points, do not repeat it: the rest belongs to the author.
 
 **Pass 3, the author's.** Deliver the text saying which blocks the author should edit by hand before publishing, in order of priority. If the author prefers to talk, ask for an audio note and transcribe it without polishing. When a detector is available, ask for the number before and after; the realistic goal for text with structure and links is under 20% AI, not zero.
 
@@ -52,7 +56,18 @@ Without a profile, use only the marks that are common in careful Brazilian Portu
 8. **The less obvious synonym,** one word per sentence, chosen against the first option.
 9. **Cutting AI exaggeration.** Real voices exaggerate less than AI imagines when it tries to "add personality".
 
-Dose in pass 2: marks 1, 3 and 8 can appear several times; the others once or twice per text; 9 is an audit rule. Marks the AI must never imitate even when they are the author's: typos, a character's name switched mid-text, double spaces. Point them out in an audit without fixing them on your own.
+Marks observed in the October 2026 measurement, when the author took a text from 88% to 2% AI (record the equivalent ones for your author; do not add them on your own in a larger dose than the author uses):
+
+10. **Splitting instead of merging.** A long opening paragraph became two, and a section gained subheadings ("A primeira mudança", "A segunda mudança"). The AI tends to merge; this author split.
+11. **"etc…" and an ellipsis closing an enumeration,** several times per text. No AI draft had it.
+12. **One operational detail nobody asked for,** per paragraph: "as cores aprovadas pelo marketing", "que a liderança pede com frequência", "banco de dados" instead of "dados", "e mais tokens e dinheiro gasto".
+13. **A looser register than the AI allows itself:** "a galera do marketing", "cada um do seu jeitinho", "tá virando", "os devs".
+14. **The complicit parenthesis:** "(ou nem tão famoso assim)", "(a camada do contexto)", the laugh moved inside parentheses.
+15. **A one-sentence law in its own paragraph:** "Em nenhum momento a IA decide sozinha."
+16. **Digits instead of words:** "3 sugestões", "15 minutos", "100 telas".
+17. **A quote as a block with the attribution below it,** and one of three quotes cut.
+
+Dose in pass 2: marks 1, 3, 8 and 12 can appear several times; the others once or twice per text; 9 is an audit rule; 10 to 17 are the author's to make and the AI's to keep. Marks the AI must never imitate even when they are the author's: typos, a character's name switched mid-text, double spaces. Point them out in an audit without fixing them on your own.
 
 ## Principle
 
@@ -176,4 +191,4 @@ A quick pass covers P0 and P1. A full audit covers all three.
 - **File mode (text in a file):** edit a copy with minimal changes and deliver a summary, keeping the original. A paragraph that already reads as human stays untouched.
 - Keep the meaning, numbers, names, quotes and structure the author chose. Humanizing cleans the form; the thesis stays the author's. Quotes, links, code and passages attributed to others are not rewritten; if they have a pattern, point it out.
 - Before delivering, reread your final text looking for em dashes, "não é X, é Y", chopped sentences and anything from the "Never add" list. They are the most common mistakes of anyone who humanizes text.
-- For text to be published, the delivery ends with the list of blocks the author should edit by hand (pass 3), in order of priority. Without that list the delivery is incomplete.
+- For text to be published, the delivery ends with the list of blocks the author should edit by hand (pass 3), in order of priority. Without that list the delivery is incomplete. When the author's edited version comes back, compare it block by block with the AI version and record the new marks in the voice profile: that comparison is where the skill learns.
