@@ -9,12 +9,14 @@ The standards I use every day to work with AI agents across my companies. Each f
 | [Portable Code Standard](portable-code-standard/) | AI agents write code without putting their own name in classes, comments and commits, without tying the system to the auth, database or deploy of the platform that generated it, without secrets in the repository, and always in English. Ships a free automated check that runs before every commit. |
 | [Web Launch Standard](web-launch-standard/) | The checklist I run before any page goes live: scope, technical SEO, images, social sharing, Google Analytics 4, accessibility, performance, forms, safe deploy and QA on the public URL. It first classifies the page as public or private, so a dashboard never gets an Open Graph image or a Search Console entry. Ships a free check for live pages. |
 | [Humanizer PT-BR](humanizer-pt-br/) | Removes the signs of AI writing from Brazilian Portuguese text: 46 patterns, absolute bans on em dashes, "não é X, é Y" and chopped sentences, and a three-pass process (produce, edit, swap words) that ends with the author's own hand. Instructions in English, so anyone building for Brazil can use it. |
+| [Brief to Production Standard](brief-to-production-standard/) | Takes a screen, page or feature from the briefing to production with a decision gate at every stage: briefing and assumptions, design system first, a quick HTML prototype to validate understanding, the build in the project's stack, a pull request on the agreed branch, and launch. The most expensive mistake with an AI agent is building the wrong thing well; this puts understanding first. |
+| [Interface Standard](interface-standard/) | Five checks between the briefing and the screen the user sees: design from the subject instead of a template, adapt to the device and the input method, prove accessibility with evidence, keep motion short and useful, and deliver a ranked review the team can act on. Works alone on any screen and inside the Brief to Production Standard. |
 
 ## Where they came from
 
 Each one started as a real problem I kept running into while shipping product and content with AI agents.
 
-The code came out signed with the tool's name, and when it was time to move the project to Git, the system depended on the tool's own authentication. Pages went live with a perfect local build and a broken social preview, missing analytics events or a dashboard indexed by Google. Portuguese text came out sounding like the same person every time, with the same em dash and the same punchline at the end of each paragraph.
+The code came out signed with the tool's name, and when it was time to move the project to Git, the system depended on the tool's own authentication. Pages went live with a perfect local build and a broken social preview, missing analytics events or a dashboard indexed by Google. Portuguese text came out sounding like the same person every time, with the same em dash and the same punchline at the end of each paragraph. Screens came out polished and generic, built before anyone checked that the agent had understood the briefing, with a purple gradient, three identical cards and an error message that apologized.
 
 I turned each fix into a written standard, with an automated check wherever a machine can do the checking.
 
@@ -51,6 +53,8 @@ It checks the live page for status, HTTPS, metadata, canonical, headings, images
 
 ## Credits
 
+Interface Standard distills, in my own words, ideas from five open source skills: [frontend-design](https://github.com/anthropics/skills) by Anthropic (Apache 2.0), [accessibility](https://github.com/addyosmani/web-quality-skills) by Addy Osmani (MIT), [adapt](https://github.com/pbakaus/impeccable) by Paul Bakaus (Apache 2.0), [design-review](https://github.com/Superfuture/design-review) by Superfuture (MIT) and [emil-design-eng](https://github.com/emilkowalski/skills) by Emil Kowalski (MIT). None of their text is reproduced.
+
 Humanizer PT-BR builds on two open source skills under the MIT License: [humanizer](https://github.com/blader/humanizer) by Siqi Chen, which draws on the "Signs of AI writing" guide from Wikipedia's WikiProject AI Cleanup, and [avoid-ai-writing](https://github.com/conorbronsdon/avoid-ai-writing) by Conor Bronsdon. I rewrote the patterns for the tics of Brazilian Portuguese, with original examples, and added the chopped sentence pattern, the absolute rules, the three-pass process I measured on my own articles, the editing marks, the voice profile and the delivery modes. The original license notices are in [humanizer-pt-br/NOTICE.md](humanizer-pt-br/NOTICE.md).
 
 ## License and contributions
@@ -70,6 +74,8 @@ Os padrões que uso no dia a dia para trabalhar com agentes de inteligência art
 - **Portable Code Standard:** a IA escreve código sem colocar o nome dela em classes, comentários e commits, sem amarrar o sistema à autenticação, ao banco ou ao deploy da plataforma que o gerou, sem segredos no repositório e sempre em inglês. Traz uma verificação automática e gratuita que roda antes de cada commit.
 - **Web Launch Standard:** o checklist que eu rodo antes de colocar qualquer página no ar, com escopo, SEO técnico, imagens, compartilhamento, Google Analytics 4, acessibilidade, performance, formulários, deploy seguro e QA na URL pública. Ele começa perguntando se a página é pública ou privada, porque um dashboard não precisa de imagem de compartilhamento nem de Search Console.
 - **Humanizer PT-BR:** tira a cara de IA de textos em português, com 46 padrões, vetos absolutos a travessão, a "não é X, é Y" e à frase picotada, e um processo em três passadas (escrever, editar, trocar palavras) que termina na mão de quem assina. Parte das skills open source humanizer, de Siqi Chen, e avoid-ai-writing, de Conor Bronsdon, com crédito e avisos de licença preservados.
+- **Brief to Production Standard:** leva uma tela, página ou funcionalidade do briefing até a produção, com uma aprovação sua em cada etapa: resumo do briefing, design system antes de tudo, protótipo em HTML para validar o entendimento, a tela na stack do projeto, pull request na branch combinada e, quando for o caso, o lançamento.
+- **Interface Standard:** cinco verificações entre o briefing e a tela que o usuário vê: desenhar a partir do assunto e não de um template, adaptar ao aparelho e ao tipo de entrada, provar a acessibilidade com evidência, manter o movimento curto e útil, e entregar uma revisão ranqueada. Funciona sozinha e dentro da Brief to Production.
 
 Cada uma nasceu de um problema real que encontrei construindo produto e conteúdo com agentes, e virou um padrão escrito, com verificação automática onde a máquina consegue checar.
 

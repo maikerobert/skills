@@ -2,6 +2,12 @@
 
 This project follows [semantic versioning](https://semver.org/).
 
+## 1.3.0 (2026-10-10)
+
+- **Brief to Production Standard** (new): briefing summary with assumptions, design system first, quick HTML prototype to validate understanding, build in the project's stack, pull request on the agreed branch, and launch, with a decision gate at every stage.
+- **Interface Standard** (new): design from the subject, adapt to the context, accessibility by evidence, motion that serves, and a ranked review. Works alone and inside the Brief to Production Standard. Credits to five open source skills in the README.
+- The release now also ships `maikerobert-skills.zip` with the whole collection.
+
 ## 1.2.0 (2026-10-08)
 
 - **Humanizer PT-BR:** new pass 2b, swap words: one or two words per sentence in about half the sentences, second or third natural option in Portuguese, nothing else touched, delivered as a numbered list for the author to veto. Measured on a real article: 98% AI after production, 95% after pass 2 (restructuring), 88% after the word-swap pass alone, 2% after the author's own pass. Eight new editing marks observed in that author's pass (splitting instead of merging, "etc…", operational detail, looser register, complicit parenthesis, one-sentence law, digits, block quotes). Delivery now ends by comparing the author's version with the AI version to record new marks.
