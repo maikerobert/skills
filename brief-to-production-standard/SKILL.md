@@ -115,6 +115,7 @@ Each of these works on its own; together they cover the whole path. Without one 
 - Interface Standard: blocks 1 and 2 at the prototype, blocks 3 to 5 before gate 3.
 - Portable Code Standard: the build and the commits.
 - Web Launch Standard: the launch.
+- Landing Page Standard: when the screen is a landing page, its message architecture is the briefing and its ten blocks guide the prototype.
 - Humanizer PT-BR: Portuguese copy.
 
 ## Never

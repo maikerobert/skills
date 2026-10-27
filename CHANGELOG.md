@@ -2,6 +2,11 @@
 
 This project follows [semantic versioning](https://semver.org/).
 
+## 1.5.0 (2026-10-27)
+
+- **Landing Page Standard** (new): ten blocks worked in order (buyer and awareness stage, first screen, proof at least as strong as the promise, objections in order, calls to action, pricing, signup flow, visual, speed, measurement), with a gate on the message architecture before any design and a review mode with ranked findings.
+- **Brief to Production Standard:** points to the Landing Page Standard when the screen is a landing page.
+
 ## 1.4.0 (2026-10-27)
 
 - **Web Launch Standard:** new "Share image" section: the image is written as an HTML canvas in the brand's colors and font (`assets/share-template.html`) and rendered by `scripts/render-share-image.mjs`, which saves a 2400×1260 JPG, warns about text outside the canvas or near the edges, long headlines, missing fonts or images and heavy files, and prints the Open Graph and X tags. Block 4 now asks to generate the image instead of reusing a logo or a cropped screenshot.
