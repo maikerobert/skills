@@ -16,7 +16,7 @@ Left alone, an AI agent produces the same screen every time: a template layout, 
 | 2. Adapt to the context | Mobile first, breakpoints from content, touch without hover, safe areas, no hidden content |
 | 3. Accessibility by evidence | Keyboard, focus, native elements, labels, contrast, reduced motion; audit, fix, audit again |
 | 4. Motion that serves | Under 300 ms, transform and opacity only, feedback on pointer-down, nothing blocks input |
-| 5. Ranked review | Blocking, important, polish; what, why, fix; strengths; evidence, not taste |
+| 5. Ranked review | Blocking, important, polish; what, why, fix; every finding names its rule; a landing page lens (first screen, one primary action, proof next to the claim) |
 
 ## Before and after
 

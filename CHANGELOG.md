@@ -2,6 +2,12 @@
 
 This project follows [semantic versioning](https://semver.org/).
 
+## 1.4.0 (2026-10-27)
+
+- **Web Launch Standard:** new "Share image" section: the image is written as an HTML canvas in the brand's colors and font (`assets/share-template.html`) and rendered by `scripts/render-share-image.mjs`, which saves a 2400×1260 JPG, warns about text outside the canvas or near the edges, long headlines, missing fonts or images and heavy files, and prints the Open Graph and X tags. Block 4 now asks to generate the image instead of reusing a logo or a cropped screenshot.
+- **Interface Standard:** the ranked review now requires every finding to name the rule it breaks and to recheck severity when more than two findings are blocking, plus a landing page lens (first screen, one primary action, proof next to the claim, objections by section, the page on a 390 px phone).
+- **Brief to Production Standard:** stage 2 extracts the design system from the live site into a `DESIGN.md` when it exists but is not documented; stage 3 explores three to five directions side by side when the direction is open, before building the prototype.
+
 ## 1.3.0 (2026-10-10)
 
 - **Brief to Production Standard** (new): briefing summary with assumptions, design system first, quick HTML prototype to validate understanding, build in the project's stack, pull request on the agreed branch, and launch, with a decision gate at every stage.

@@ -48,15 +48,16 @@ If an open question blocks the design system or the prototype, ask it now. Other
 No screen is built before the design system is settled.
 
 1. **Ask and check.** Ask whether the project has a design system, and look for one in the repository (token files, theme, CSS variables, component library, documentation site) and in the knowledge base.
-2. **If it exists,** list what the screen will reuse (tokens and components) and any gap the screen needs filled. New pieces follow the existing naming and style.
-3. **If it does not exist,** ask for the logo, brand colors, fonts, references the user likes and anything the brand already uses. Then create a minimum design system:
+2. **If the product is live but the design system is not documented,** extract it from the live site before anything else: colors, type scale, spacing, radius, shadows and the main components, written to a `DESIGN.md` with the real values measured from the pages. Confirm it with the user; from then on it counts as the existing design system.
+3. **If it exists,** list what the screen will reuse (tokens and components) and any gap the screen needs filled. New pieces follow the existing naming and style.
+4. **If it does not exist,** ask for the logo, brand colors, fonts, references the user likes and anything the brand already uses. Then create a minimum design system:
    - Colors: brand, neutrals and semantic colors (success, warning, error, info), with text contrast checked.
    - Typography: families, weights and a size scale.
    - Spacing scale, border radius, shadows and breakpoints.
    - Components with their states: buttons, inputs (including error), selects, cards and alerts.
    - A reference page that shows every token and component, saved in the project.
-4. Token and component names are in English (`color-primary`, `space-4`, `button-secondary`).
-5. **Gate 1:** the briefing summary plus the design system (what is reused or what was created).
+5. Token and component names are in English (`color-primary`, `space-4`, `button-secondary`).
+6. **Gate 1:** the briefing summary plus the design system (what is reused or what was created).
 
 ## Stage 3: Prototype to validate understanding (gate 2)
 
@@ -70,6 +71,8 @@ The prototype answers one question: did the agent understand what the user imagi
 - Include the states that matter for the flow: empty, loading, error and success.
 - Publish it where the user can open it from any device, such as a private page (a Claude artifact or similar) with a link. A local file is the fallback.
 - Iterate until approved, and keep a short list of what changed in each round.
+
+**When the direction is open,** explore before converging. For the section that carries the decision (usually the first screen, pricing or the main flow), show three to five distinct directions side by side on one comparison page, each with a one-line thesis ("proof first", "calculator up front", "comparison table"), built with the real content and inside the design system, never with placeholder text. The user picks one, or combines two, and only that direction becomes the prototype. Skip this when the briefing or a reference already fixes the direction.
 
 **When a visual reference must be reproduced faithfully,** build it in layers and compare side by side with the reference at each one: structure first, then background and surfaces, then typography, then images and icons. Measure colors, spacing and sizes from the reference instead of guessing.
 

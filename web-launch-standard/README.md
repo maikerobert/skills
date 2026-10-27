@@ -17,13 +17,24 @@ The checklist to run before any website, landing page or web app goes live: scop
 1. Scope and assumptions
 2. Technical SEO (canonical, sitemap, robots, headings, language, duplicate content, honest JSON-LD, Search Console)
 3. Images (names, compression, modern formats, dimensions, useful `alt`)
-4. Sharing and icons (Open Graph 1200×630, X card, favicon, Apple touch icon, manifest, `theme-color`)
+4. Sharing and icons (Open Graph 1200×630, X card, favicon, Apple touch icon, manifest, `theme-color`), with a generator for the share image
 5. Analytics (single GA4 install, `snake_case` events, one main conversion)
 6. Accessibility (keyboard, focus, contrast, labels, errors, `prefers-reduced-motion`)
 7. Performance (mobile first, Core Web Vitals, fonts, third-party scripts, animations)
 8. Forms (validation, states, duplicate submission protection, documented delivery)
 9. Versioning and deploy (backup, permissions, rollback, no secrets)
 10. Launch QA in production, the only point where a page can be called ready
+
+## Generate the share image
+
+Write the image as a small HTML canvas in the brand's colors and font (start from `assets/share-template.html`), then render and check it:
+
+```bash
+npm install --no-save playwright-core
+node scripts/render-share-image.mjs og-home.html public/og-home.jpg --url https://your-site.com/og-home.jpg
+```
+
+It saves a 2400×1260 JPG, warns about text outside the canvas or too close to the edges, a headline longer than two lines or eight words, missing fonts or images and files over 1 MB, and prints the Open Graph and X tags.
 
 ## Check a live page
 

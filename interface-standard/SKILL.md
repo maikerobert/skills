@@ -69,7 +69,17 @@ Whether the input is a screenshot, a URL or a component file, the review has one
 
 Each finding has three lines: **What** (where, exactly), **Why** (the effect on the user, with evidence: a measurement, a rule, a screenshot), **Fix** (the specific change). Then a short list of **strengths**, so the good decisions are not undone in the next round.
 
-Rules of the review: lead with the few findings that matter, usually five to seven; a style preference is not a finding; a short review or no findings is a valid result; the review changes nothing in the code unless the user asks for the fixes.
+Rules of the review: lead with the few findings that matter, usually five to seven; every finding names the rule it breaks, and a finding without a rule is a style preference, not a finding; if more than two findings come out as blocking, check the severity again, because a page with five blocking problems is usually a page with one or two; a short review or no findings is a valid result; the review changes nothing in the code unless the user asks for the fixes.
+
+**Landing page lens.** When the screen is a landing page, the review also answers, in this order:
+
+1. Does the first screen say what the product is, for whom, and what to do next, without scrolling?
+2. Is there one primary action, repeated where the decision happens, with every other action visibly secondary?
+3. Is the proof (numbers, logos, testimonials, real screenshots) next to the claims and the call to action it supports, not parked at the end?
+4. Does each section answer the objection the visitor has at that point of the scroll?
+5. Does the page still work on a 390 px phone, with the primary action reachable by the thumb?
+
+Comparing a weak section with two or three strong pages of the same category helps to show the fix, but a comparison only supports a finding; it never creates one.
 
 ## Works with
 

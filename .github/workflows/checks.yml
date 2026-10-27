@@ -15,3 +15,5 @@ jobs:
         run: shellcheck -S warning portable-code-standard/scripts/*.sh
       - name: Python syntax
         run: python3 -m py_compile web-launch-standard/scripts/check-page.py
+      - name: JavaScript syntax
+        run: node --check web-launch-standard/scripts/render-share-image.mjs

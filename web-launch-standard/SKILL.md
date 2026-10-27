@@ -1,6 +1,6 @@
 ---
 name: web-launch-standard
-description: Launch checklist for websites, landing pages and web apps, covering scope, technical SEO, images, social sharing and icons, Google Analytics 4, accessibility, performance, forms, safe deploy and public QA in production. It first classifies the page as public or private and applies only what fits. Use when building, reviewing or publishing any web page, and before declaring a page ready.
+description: Launch checklist for websites, landing pages and web apps, covering scope, technical SEO, images, social sharing and icons (including generating and checking the share image), Google Analytics 4, accessibility, performance, forms, safe deploy and public QA in production. It first classifies the page as public or private and applies only what fits. Use when building, reviewing or publishing any web page, and before declaring a page ready.
 ---
 
 # Web Launch Standard
@@ -70,7 +70,7 @@ The table shows where each block applies. ✓ applies, ○ applies in part, ✗ 
 ### 4. Sharing and icons
 
 - Complete Open Graph: `og:title`, `og:description`, `og:image`, `og:url`, `og:type`, `og:site_name` and `og:locale`.
-- Share image at 1200×630, well composed (legible text, important content away from the edges), with absolute URL, `og:image:width`, `og:image:height` and `og:image:alt`.
+- Share image at 1200×630, well composed (legible text, important content away from the edges), with absolute URL, `og:image:width`, `og:image:height` and `og:image:alt`. When the page has none, generate it (see "Share image" below) instead of reusing a logo or a cropped screenshot.
 - X (Twitter) card: `twitter:card` set to `summary_large_image`, with title, description and image.
 - Favicon (SVG or ICO plus PNG), Apple touch icon at 180×180, `manifest.webmanifest` with icons at 192 and 512, and `theme-color`.
 - Validate the social preview with a debugger or a real share before launch.
@@ -137,6 +137,23 @@ python3 scripts/check-page.py https://app.example.com/ --private  # private page
 ```
 
 It checks HTTPS and status, `lang`, title, description, canonical, a single `<h1>`, images without `alt` or without dimensions, JSON-LD syntax, Open Graph and X card tags, the 1200×630 image declaration, favicon, Apple touch icon, manifest, `theme-color`, `robots.txt`, `sitemap.xml` and a duplicated analytics installation. With `--private`, it requires `noindex` and flags a page listed in the sitemap. Anything it cannot see (visual quality of the share image, keyboard use, real conversions) stays in the manual list above.
+
+## Share image
+
+A share image is the first thing most people see of a page, in a chat or a feed, at thumbnail size. Generate it from the brand, not from a generic template, and check it before it ships.
+
+1. **Gather the inputs.** One headline of eight words or fewer, the brand colors (background, text, accent), the logo (or a text wordmark) and the site's font. Look for them in the project first (CSS variables, theme or token files, the design system, the logo folder), show what was found and confirm. Never invent a palette.
+2. **Write the canvas.** Copy `assets/share-template.html` next to the page as `og-<page-slug>.html` and set the colors, font, logo and texts. One idea per image: headline, an optional short line and the domain. A product visual is optional and stays inside the canvas.
+3. **Render and check.** `scripts/render-share-image.mjs` renders the canvas at 2× (2400×1260 JPG) and warns about text outside the canvas or too close to the edges, a headline longer than two lines or eight words, fonts or images that failed to load, and files over 1 MB. Fix and render again until there are no warnings.
+4. **Look at it.** Open the JPG at thumbnail size: the headline must read at a glance, with enough contrast and nothing important near the edges.
+5. **Publish.** Save the JPG in the site's static folder, use the meta tags the script prints with the image's absolute URL, and keep the canvas HTML so the image can be regenerated when the text changes.
+
+```bash
+npm install --no-save playwright-core     # once; uses Google Chrome or Playwright's Chromium
+node scripts/render-share-image.mjs og-home.html public/og-home.jpg --url https://example.com/og-home.jpg --alt "What the image shows"
+```
+
+For pages generated in volume (one per event, product or listing), use the same canvas as a template filled by the build or the back end, and run the check on a sample before publishing the batch.
 
 ## How to deliver
 

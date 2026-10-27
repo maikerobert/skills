@@ -13,8 +13,8 @@ The most expensive mistake when building with an AI agent is building the wrong 
 | Stage | What happens | Gate |
 |---|---|---|
 | 1. Briefing | Context, rules, goals and references become a one-screen summary with assumptions and open questions | With gate 1 |
-| 2. Design system | Reuse the project's design system, or create a minimum one before any screen | Gate 1 |
-| 3. Prototype | Quick HTML prototype inside the design system, designed from the subject and mobile first (Interface Standard), with real copy reviewed by the Humanizer | Gate 2 |
+| 2. Design system | Reuse the project's design system, extract it from the live site when it is not documented, or create a minimum one before any screen | Gate 1 |
+| 3. Prototype | Three to five directions side by side when the direction is open, then a quick HTML prototype inside the design system, designed from the subject and mobile first (Interface Standard), with real copy reviewed by the Humanizer | Gate 2 |
 | 4. Build | The approved prototype rebuilt in the project's stack, following the Portable Code Standard, checked for accessibility and motion and delivered with a ranked review (Interface Standard) | Gate 3 |
 | 5. Git | Commits on the agreed branch and a pull request, never straight to main | After gate 3 |
 | 6. Production | Launch with the Web Launch Standard, only when requested | Gate 4 |

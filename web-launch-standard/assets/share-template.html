@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Share image</title>
+<style>
+  /* Edit these values only: brand colors, font and texts below. */
+  :root {
+    --bg: #0f172a;
+    --text: #f8fafc;
+    --muted: #cbd5e1;
+    --accent: #38bdf8;
+    --font: "Inter", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 64px 72px;
+  }
+  .logo { height: 56px; display: flex; align-items: center; gap: 16px; font-size: 32px; font-weight: 700; }
+  .logo img { height: 56px; width: auto; }
+  .content { align-self: center; max-width: 920px; }
+  [data-role="headline"] { font-size: 72px; line-height: 1.08; font-weight: 800; letter-spacing: -0.02em; }
+  .subline { margin-top: 24px; font-size: 32px; line-height: 1.3; color: var(--muted); }
+  .footer { display: flex; justify-content: space-between; align-items: center; font-size: 26px; color: var(--muted); }
+  .bar { width: 120px; height: 8px; border-radius: 4px; background: var(--accent); }
+</style>
+</head>
+<body>
+  <div class="logo">
+    <!-- Replace with <img src="logo.svg" alt=""> or keep a text wordmark. -->
+    <span>Brand</span>
+  </div>
+  <div class="content">
+    <h1 data-role="headline">One clear promise in eight words or fewer</h1>
+    <p class="subline">A short supporting line, optional</p>
+  </div>
+  <div class="footer">
+    <div class="bar"></div>
+    <span>example.com</span>
+  </div>
+</body>
+</html>
