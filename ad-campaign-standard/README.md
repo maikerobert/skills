@@ -15,7 +15,7 @@ Most campaigns fail before the first ad runs: a budget that cannot reach the goa
 | 1. Business math | Goal, funnel worked backwards, what the budget buys; a gate on the plan before anything is produced |
 | 2. Destination | One action, a page that passes the Landing Page Standard, a price policy, someone who owns the response |
 | 3. Structure | Objective equal to the business result, few ad sets with enough data, names that travel into the report |
-| 4. Audience and retargeting | Broad with signals, converters excluded, retargeting audiences created on day one, including one for "visited and did not convert" |
+| 4. Audience and retargeting | A required audience card (persona, location, age, signals, exclusions, each with its reason, checked against who actually converts), broad delivery with signals, converters excluded, retargeting audiences created on day one |
 | 5. Angles | One buyer situation and one pain per ad, explained for someone who never heard of the offer |
 | 6. Creative and copy | A hook in two seconds without sound, formats that carry considered offers, every word through the humanizer; a gate on a review page |
 | 7. Tracking | One conversion event everywhere, dynamic UTMs, the ad name carried into the conversation, a sales log |

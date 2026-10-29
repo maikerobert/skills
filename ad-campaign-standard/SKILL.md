@@ -22,7 +22,7 @@ Two modes: **build** a campaign (blocks 1 to 10, in order, with a gate after blo
 - **Say it plainly when the budget cannot reach the goal,** with the numbers, and propose what the budget can buy instead: usually a test that finds the winning message and the real cost per conversation.
 - **Confirm the account can run:** status, payment method, page and profile linked, pixel or dataset receiving events.
 
-**Gate:** a one-screen plan with the goal, the funnel math, the budget and what it buys, the structure, the angles, the conversion event and the retargeting plan (which audiences, when they turn on). Nothing is produced before it is approved.
+**Gate:** a one-screen plan with the goal, the funnel math, the budget and what it buys, the structure, the audience card from block 4, the angles, the conversion event and the retargeting plan (which audiences, when they turn on). Nothing is produced before it is approved, and no plan is approved without the audience card.
 
 ## 2. The destination converts before money flows
 
@@ -39,6 +39,18 @@ Two modes: **build** a campaign (blocks 1 to 10, in order, with a gate after blo
 - **Name everything for the report:** `BRAND_Product_Objective`, `AS01_Geo_Audience_Event`, `AD01_Format_Angle`. The ad name travels into the tracking.
 
 ## 4. Audience and retargeting: broad, with signals, exclusions and a second touch
+
+**Required: the audience card.** Every campaign carries a written audience card, approved at the gate in block 1 and kept next to the campaign. No audience setting exists without a reason on the card, and "the platform decides" is not a reason. The card has:
+
+- **Who buys:** the buyer persona in one or two lines (role, size of business or life stage, what they use today), taken from the destination's buyer work, not invented for the ad.
+- **Location:** where the business can serve and sell, and why (a local service draws a radius around the address; a national digital product covers the country, and the card says which regions are expected to convert best).
+- **Age:** the minimum and the expected range, each with a reason tied to the persona (who has the problem and the money to solve it). State which limits are hard controls and which are only suggestions to the platform.
+- **Gender, language and other hard limits:** only when the offer requires them, with the reason.
+- **Signals:** the interests, behaviors or custom audiences given as suggestions, and why each one points to the persona.
+- **Exclusions:** converters, customers, employees, and any group that clicks but cannot buy.
+- **What we expect the platform to find,** and the check: on day 3 and day 7, break results down by age, gender and region and compare them with the card. When most conversions come from outside the persona, treat it as a warning about lead quality, not as a win, and check with whoever answers the conversations before trusting the cost.
+
+**After publishing, open the ad set and confirm the live settings match the card.** Platforms drop or reset suggestions and add placements on their own; a card nobody verified describes a campaign that does not exist.
 
 - **Broad targeting with the platform's automatic audience** works better than narrow interest stacks for most budgets. Add interests or behaviors as suggestions, not limits; set only the hard limits the business needs (country, minimum age, language).
 - **Exclude whoever already converted** (a custom audience of the conversion event over the last 30 to 60 days) from prospecting.
@@ -113,7 +125,7 @@ When operating the ads manager through browser automation:
 
 ## 10. Read and iterate
 
-- **A dashboard for people who are not media buyers:** a status for the week, one line on what to do now, the funnel (spend, reach, clicks, conversations, meetings, sales) with cost per step, the health of each ad against its ranges, when people convert (day of week by hour), and the size of each retargeting audience with whether it is ready to run.
+- **A dashboard for people who are not media buyers:** a status for the week, one line on what to do now, the funnel (spend, reach, clicks, conversations, meetings, sales) with cost per step, the health of each ad against its ranges, when people convert (day of week by hour), who is converting (age, gender, region) against the audience card, and the size of each retargeting audience with whether it is ready to run.
 - **Ranges to judge ads by** (adjust to the market): hook rate (3-second views ÷ impressions) ≥ 25%, link click-through rate ≥ 1%, frequency ≤ 2.5, cost per conversation within the target from block 1, conversation-to-sale rate around the assumption.
 - **Weekly decisions, one hypothesis at a time:** pause ads below the ranges and above the target cost, replace them with reserve creative on the winning angle, and write down what was learned.
 - **Scale what works gradually** (about 20% budget steps); open a second ad set only when two angles tie and the budget lets both reach the learning threshold.
@@ -129,7 +141,7 @@ When operating the ads manager through browser automation:
 
 ## Review mode
 
-Run the ten blocks as a checklist against the live campaign, its page and its numbers, and deliver the findings in the ranked format of the Interface Standard (blocking, important, polish; what, why, fix; every finding names the block and rule it breaks), followed by what is working. Blocking means the campaign cannot reach its job: the budget cannot buy the goal, the objective is not the business result, the conversion event does not fire, or nobody can tell which ad brought a sale.
+Run the ten blocks as a checklist against the live campaign, its page and its numbers, and deliver the findings in the ranked format of the Interface Standard (blocking, important, polish; what, why, fix; every finding names the block and rule it breaks), followed by what is working. Blocking means the campaign cannot reach its job: the budget cannot buy the goal, the objective is not the business result, the conversion event does not fire, nobody can tell which ad brought a sale, or there is no audience card (or the live audience does not match it).
 
 ## How to deliver
 
@@ -155,3 +167,4 @@ Run the ten blocks as a checklist against the live campaign, its page and its nu
 - Editing a campaign during its first week to react to one day of data.
 - Judging the campaign by cost per lead without knowing cost per sale.
 - Running retargeting before the audience can deliver, or showing people who already converted the same ads again.
+- Launching with audience settings that nobody can explain, or calling a campaign a success while its conversions come from outside the persona.
