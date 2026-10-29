@@ -50,7 +50,7 @@ Two modes: **build** a campaign (blocks 1 to 10, in order, with a gate after blo
 - **Exclusions:** converters, customers, employees, and any group that clicks but cannot buy.
 - **What we expect the platform to find,** and the check: on day 3 and day 7, break results down by age, gender and region and compare them with the card. When most conversions come from outside the persona, treat it as a warning about lead quality, not as a win, and check with whoever answers the conversations before trusting the cost.
 
-**After publishing, open the ad set and confirm the live settings match the card.** Platforms drop or reset suggestions and add placements on their own; a card nobody verified describes a campaign that does not exist.
+**After publishing, open the ad set and confirm the live settings match the card** (part of the plan-to-live check in block 8). Platforms drop or reset suggestions and add placements on their own; a card nobody verified describes a campaign that does not exist.
 
 - **Broad targeting with the platform's automatic audience** works better than narrow interest stacks for most budgets. Add interests or behaviors as suggestions, not limits; set only the hard limits the business needs (country, minimum age, language).
 - **Exclude whoever already converted** (a custom audience of the conversion event over the last 30 to 60 days) from prospecting.
