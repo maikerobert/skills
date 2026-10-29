@@ -19,8 +19,8 @@ Most campaigns fail before the first ad runs: a budget that cannot reach the goa
 | 5. Angles | One buyer situation and one pain per ad, explained for someone who never heard of the offer |
 | 6. Creative and copy | A hook in two seconds without sound, formats that carry considered offers, every word through the humanizer; a gate on a review page |
 | 7. Tracking | One conversion event everywhere, dynamic UTMs, the ad name carried into the conversation, a sales log |
-| 8. Build | Account readiness, platform AI off, placements per format, previews checked, drafts approved before publishing |
-| 9. First week | Hands off for seven days, watch only for breakage |
+| 8. Build | Account readiness, platform AI off, placements per format, previews checked, drafts approved before publishing, and a required plan-to-live check after publishing and after every edit |
+| 9. First week | Hands off for seven days, watch only for breakage, every change written in the campaign's history |
 | 10. Read and iterate | A dashboard for non-specialists, ranges per ad, one hypothesis a week, scale in steps, retargeting turned on when the audience passes about 1,000 people |
 
 ## Install

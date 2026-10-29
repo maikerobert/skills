@@ -108,6 +108,17 @@ Two modes: **build** a campaign (blocks 1 to 10, in order, with a gate after blo
 - **Verify every ad's preview before publishing,** in feed and stories: the right media, the right text, no stray characters. Duplicated ads keep the last media used.
 - **Leave everything in draft and get explicit approval to publish.** Publishing spends money.
 
+**Required: the plan-to-live check.** A plan that was approved but not applied is the most expensive mistake in this standard, because the report keeps describing a campaign that is not running. After publishing, and again after every later edit, open the live campaign, ad set and ads and tick each approved item against what the platform actually saved, with the live value written next to the planned one:
+
+- objective, conversion location, dataset and conversion event;
+- budget, budget level, schedule and bid strategy;
+- every line of the audience card: locations, age (and whether each limit is a hard control or a suggestion), gender, languages, interests and behaviors, custom audiences included and excluded;
+- placements, including the ones the platform added on its own;
+- platform AI enhancements and dynamic creative, as approved;
+- each ad: media per placement, text, headline, call to action, destination URL and URL parameters.
+
+Any item that does not match is fixed before anything else, or reported to the owner the same day. The check is saved with the campaign's history of changes (date, item, planned, live, fixed), so the next review starts from what is really running.
+
 When operating the ads manager through browser automation:
 
 - Upload buttons open the operating system's file picker, which automation cannot drive. Find the page's own file input and set the file on it directly; files must be in a folder the agent can read and under the platform's size limit.
@@ -122,6 +133,7 @@ When operating the ads manager through browser automation:
 - **Do not touch for seven days,** or until each ad has enough spend to judge (about two to three times the target cost per conversation). Every edit restarts learning.
 - **Watch only for breakage:** ads rejected in review, spend not starting, the conversion event not firing, the chat or form not receiving.
 - **Answer every conversation fast and log it.**
+- **Keep a history of changes:** every edit to the campaign (date, what changed, why, what we expect, when to review, whether it restarts learning) goes into a change log next to the dashboard. The review compares results before and after each entry; a result nobody can tie to a change teaches nothing.
 
 ## 10. Read and iterate
 
@@ -141,7 +153,7 @@ When operating the ads manager through browser automation:
 
 ## Review mode
 
-Run the ten blocks as a checklist against the live campaign, its page and its numbers, and deliver the findings in the ranked format of the Interface Standard (blocking, important, polish; what, why, fix; every finding names the block and rule it breaks), followed by what is working. Blocking means the campaign cannot reach its job: the budget cannot buy the goal, the objective is not the business result, the conversion event does not fire, nobody can tell which ad brought a sale, or there is no audience card (or the live audience does not match it).
+Run the ten blocks as a checklist against the live campaign, its page and its numbers, and deliver the findings in the ranked format of the Interface Standard (blocking, important, polish; what, why, fix; every finding names the block and rule it breaks), followed by what is working. Blocking means the campaign cannot reach its job: the budget cannot buy the goal, the objective is not the business result, the conversion event does not fire, nobody can tell which ad brought a sale, there is no audience card, or the live campaign does not match the approved plan (the plan-to-live check was skipped or found differences nobody fixed).
 
 ## How to deliver
 
@@ -168,3 +180,4 @@ Run the ten blocks as a checklist against the live campaign, its page and its nu
 - Judging the campaign by cost per lead without knowing cost per sale.
 - Running retargeting before the audience can deliver, or showing people who already converted the same ads again.
 - Launching with audience settings that nobody can explain, or calling a campaign a success while its conversions come from outside the persona.
+- Reporting on a plan without checking that it is what is running, or changing a campaign without writing the change in its history.
