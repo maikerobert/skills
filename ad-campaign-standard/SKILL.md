@@ -125,6 +125,8 @@ When operating the ads manager through browser automation:
 - The Escape key can close the whole editor; edits survive as a draft. Never click empty space near the footer, where discard buttons sit.
 - When a dropdown ignores clicks by position, open it and select the option by its role and text.
 - When the publish review flags every item, publish one ad from its editor to read the real error.
+- Collapsed sections hide settings (audience suggestions sit behind "show suggestions", placements behind "show more settings"). Expand every section before reading a value, and never report a setting as missing from a collapsed view.
+- Changing placements makes the platform rewrite each ad's placement groups as drafts. Review those drafts and publish them with the ad set, or the ads keep the old placement setup.
 
 **Gate:** the person who pays approves the drafts and the budget. Only then publish.
 
