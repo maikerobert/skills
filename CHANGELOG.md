@@ -2,6 +2,10 @@
 
 This project follows [semantic versioning](https://semver.org/).
 
+## 1.6.0 (2026-10-28)
+
+- **Ad Campaign Standard** (new): ten blocks for paid social campaigns that generate leads or sales (business math, destination, structure, audience and retargeting, angles, creative and copy, tracking, build, first week, read and iterate), with gates on the plan, on the creative and before publishing, and a review mode with ranked findings. Retargeting audiences are created on day one, including one for people who visited the page and did not convert, and retargeting turns on only when that audience passes about 1,000 people. Every campaign requires an audience card (persona, location, age, signals and exclusions, each with its reason), approved at the plan gate, verified in the live ad set after publishing and checked against who actually converts on days 3 and 7. A plan-to-live check is required after publishing and after every edit (every approved item ticked against what the platform saved), and every change goes into a change log next to the dashboard.
+
 ## 1.5.0 (2026-10-27)
 
 - **Landing Page Standard** (new): ten blocks worked in order (buyer and awareness stage, first screen, proof at least as strong as the promise, objections in order, calls to action, pricing, signup flow, visual, speed, measurement), with a gate on the message architecture before any design and a review mode with ranked findings.
